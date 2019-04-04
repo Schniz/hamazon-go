@@ -4,6 +4,18 @@ import face_recognition
 import cPickle
 import time
 import os
+import pyrebase
+
+config = {
+  "apiKey": "AIzaSyA_ckriMFaCyFsdSbboOYOgdWffAS-_vAk",
+  "authDomain": "soluto-hack.firebaseapp.com",
+  "databaseURL": "https://soluto-hack.firebaseio.com",
+  "storageBucket": "soluto-hack.appspot.com",
+  "serviceAccount": "soluto-hack-firebase-adminsdk-fbmsj-1d576d412c.json"
+}
+
+firebase = pyrebase.initialize_app(config)
+db = firebase.database()
 
 MIN_TIME_SINCE_ANNOUNCED = 120
 MIN_FRAMES = 3
@@ -20,6 +32,7 @@ def announce(name):
 
 	last_announced[name] = t
 	os.system('say -v carmit "hi %s"' % name)
+	db.child('kitchen').push({'name': name})
 
 
 

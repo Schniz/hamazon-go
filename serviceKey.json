@@ -1,0 +1,8 @@
+ {
+    apiKey: "AIzaSyA_ckriMFaCyFsdSbboOYOgdWffAS-_vAk",
+    authDomain: "soluto-hack.firebaseapp.com",
+    databaseURL: "https://soluto-hack.firebaseio.com",
+    projectId: "soluto-hack",
+    storageBucket: "soluto-hack.appspot.com",
+    messagingSenderId: "479332711191"
+  }
